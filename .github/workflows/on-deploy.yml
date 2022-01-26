@@ -20,10 +20,6 @@ on:
         description: 'Environment to run tests against'
         type: environment
         required: true
-        options:
-        - dev
-        - stage
-        - prod
 
 
 jobs:
@@ -39,3 +35,5 @@ jobs:
         run: echo  The environment is ${{ github.event.inputs.environment }}
       - name: Print the input logLevel to STDOUT
         run: echo  The logLevel is ${{ github.event.inputs.logLevel }}
+      - name: Print the input secret to STDOUT
+        run: echo  The secret is ${{ secrets.PROFILE_NAME }}
